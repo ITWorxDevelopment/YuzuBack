@@ -1,0 +1,11 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+<SiteLayout title="Downloads — Backupist" description="Download Backupist for Windows or Linux." active="downloads">
+  <section class="wrap page-hero"><span class="eyebrow">Choose your platform</span><h1>Get Backupist.</h1><p>Backupist is free to download and use. Choose the version for your computer; donations are optional and help support continued development.</p></section>
+  <section class="wrap content"><div class="card-grid">
+    <article class="download-card"><div class="card-top"><span class="platform-icon">⊞</span><h2>Windows</h2></div><span class="tag">Windows desktop</span><p>Download the Backupist installer for Windows. Check the release notes for version details before installing.</p><div class="pending">Windows download link will be added here when the release URL is confirmed.</div></article>
+    <article class="download-card"><div class="card-top"><span class="platform-icon">◈</span><h2>Linux</h2></div><span class="tag">Linux desktop</span><p>Download the Linux build of Backupist. Package format and system requirements will be listed with each release.</p><div class="pending">Linux download link will be added here when the release URL is confirmed.</div></article>
+  </div><div class="note"><b>Before installing:</b> Use the release notes for the version number, platform requirements, and any upgrade guidance. Backupist is proprietary freeware; its source code is not published.</div><a class="button line" href={`${base}changelog/`}>Read the changelog ↗</a></section>
+</SiteLayout>
