@@ -1,41 +1,208 @@
 ---
-import SiteLayout from '../layouts/SiteLayout.astro';
+import SectionHeading from "../components/SectionHeading.astro";
+import { SITE } from "../config/site";
+import SiteLayout from "../layouts/SiteLayout.astro";
+
 const base = import.meta.env.BASE_URL;
+
 const features = [
-  { icon: '◉', title: 'Profiles for your backups', text: 'Organize backup settings by task and run them again without rebuilding the command each time.' },
-  { icon: '◷', title: 'See your snapshots', text: 'Browse available snapshots and choose what you want to restore from a visual list.' },
-  { icon: '↶', title: 'Restore with a plan', text: 'Use a guided restore flow to choose the snapshot and destination before bringing files back.' },
-  { icon: '⌘', title: 'Use restic, visually', text: 'Manage core restic backup and repository tasks through a desktop interface built for everyday use.' },
-  { icon: '⚙', title: 'Make it fit your routine', text: 'Configure retention and optional pre-backup or post-backup scripts for your workflow.' },
-  { icon: '⇄', title: 'Windows and Linux', text: 'Use the same app across the two desktop platforms supported by YuzuBack.' },
+  {
+    icon: "◉",
+    title: "Profiles for your backups",
+    text: "Organize backup settings by task and run them again without rebuilding the command each time.",
+  },
+  {
+    icon: "◷",
+    title: "See your snapshots",
+    text: "Browse available snapshots and choose what you want to restore from a visual list.",
+  },
+  {
+    icon: "↶",
+    title: "Restore with a plan",
+    text: "Use a guided restore flow to choose the snapshot and destination before bringing files back.",
+  },
+  {
+    icon: "⌘",
+    title: "Use restic, visually",
+    text: "Manage core restic backup and repository tasks through a desktop interface built for everyday use.",
+  },
+  {
+    icon: "⚙",
+    title: "Make it fit your routine",
+    text: "Configure retention and optional pre-backup or post-backup scripts for your workflow.",
+  },
+  {
+    icon: "⇄",
+    title: "Windows and Linux",
+    text: `Use the same app across the two desktop platforms supported by ${SITE.name}.`,
+  },
+];
+
+const screenshots = [
+  {
+    image: "yuzuback-snapshots.png",
+    alt: `${SITE.name} snapshot list with backup and restore actions`,
+    title: "Browse snapshots",
+    text: "Review saved snapshots and open common actions from one screen.",
+  },
+  {
+    image: "yuzuback-import-export.png",
+    alt: `${SITE.name} preferences showing import and export settings`,
+    title: "Import and export settings",
+    text: "Use the settings panel to move preferences between installations.",
+  },
+  {
+    image: "yuzuback-theme-settings.png",
+    alt: `${SITE.name} appearance settings with dark theme selected`,
+    title: "Choose your appearance",
+    text: "Select a light or dark theme in preferences.",
+  },
+];
+
+const steps = [
+  {
+    number: "01",
+    label: "Configure",
+    title: "Create a profile",
+    text: "Choose what to back up and configure the repository and options for that job.",
+  },
+  {
+    number: "02",
+    label: "Run",
+    title: "Make and review backups",
+    text: "Start a backup and keep an eye on the profile's snapshot history.",
+  },
+  {
+    number: "03",
+    label: "Restore",
+    title: "Bring files back",
+    text: "Select a snapshot, choose a restore destination, and follow the guided process.",
+  },
 ];
 ---
-<SiteLayout title="YuzuBack — Backups without busywork" description="YuzuBack is a free desktop backup manager for Windows and Linux, formerly Easy Backup Manager." active="overview">
+
+<SiteLayout
+  title={`${SITE.name} — Backups without busywork`}
+  description={SITE.description}
+  active="overview"
+>
   <section class="wrap hero">
     <div class="hero-copy">
       <span class="eyebrow">A calmer way to manage backups</span>
       <h1>Backups, without the <em>busywork.</em></h1>
-      <p>YuzuBack is a free desktop app that makes restic backups easier to create, monitor, and restore. Built for Windows and Linux. Formerly Easy Backup Manager (EBM).</p>
-      <div class="hero-actions"><a class="button lime" href={`${base}downloads/`}>Get YuzuBack <span aria-hidden="true">↗</span></a><a class="button line" href="#how-it-works">See how it works</a></div>
-      <div class="trust"><b>Free to use</b><span>·</span><b>Windows + Linux</b><span>·</span><span>Donations optional</span></div>
+      <p>
+        {SITE.name} is a free desktop app that makes restic backups easier to create,
+        monitor, and restore. Built for Windows and Linux.
+      </p>
+      <div class="hero-actions">
+        <a class="button lime" href={`${base}downloads/`}>
+          Get {SITE.name}
+          <span aria-hidden="true">↗</span>
+        </a>
+        <a class="button line" href="#how-it-works">See how it works</a>
+      </div>
+      <div class="trust">
+        <b>Free to use</b><span>·</span><b>Windows + Linux</b><span>·</span>
+        <span>Donations optional</span>
+      </div>
     </div>
-    <figure class="preview-shell real-shot"><img src={`${base}images/yuzuback-main-window.png`} alt="YuzuBack main window showing backup profiles and snapshot controls" /><figcaption class="preview-caption">YuzuBack running on Linux</figcaption></figure>
+    <figure class="preview-shell real-shot">
+      <img
+        src={`${base}images/yuzuback-main-window.png`}
+        alt={`${SITE.name} main window showing backup profiles and snapshot controls`}
+      />
+      <figcaption class="preview-caption">
+        {SITE.name} running on Linux
+      </figcaption>
+    </figure>
   </section>
 
   <section class="section white" id="screenshots">
     <div class="wrap">
-      <div class="section-head"><div><span class="kicker">A look inside YuzuBack</span><h2>Real screens. Clear workflows.</h2></div><p>Explore the backup list, snapshot history, and settings in the desktop app.</p></div>
+      <SectionHeading
+        eyebrow={`A look inside ${SITE.name}`}
+        title="Real screens. Clear workflows."
+        description="Explore the backup list, snapshot history, and settings in the desktop app."
+      />
       <div class="screenshot-grid">
-        <figure class="screenshot-card"><img src={`${base}images/yuzuback-snapshots.png`} alt="YuzuBack snapshot list with backup and restore actions" /><figcaption><b>Browse snapshots</b><span>Review saved snapshots and open common actions from one screen.</span></figcaption></figure>
-        <figure class="screenshot-card"><img src={`${base}images/yuzuback-import-export.png`} alt="YuzuBack preferences showing import and export settings" /><figcaption><b>Import and export settings</b><span>Use the settings panel to move preferences between installations.</span></figcaption></figure>
-        <figure class="screenshot-card"><img src={`${base}images/yuzuback-theme-settings.png`} alt="YuzuBack appearance settings with dark theme selected" /><figcaption><b>Choose your appearance</b><span>Select a light or dark theme in preferences.</span></figcaption></figure>
+        {
+          screenshots.map((screenshot) => (
+            <figure class="screenshot-card">
+              <img
+                src={`${base}images/${screenshot.image}`}
+                alt={screenshot.alt}
+              />
+              <figcaption>
+                <b>{screenshot.title}</b>
+                <span>{screenshot.text}</span>
+              </figcaption>
+            </figure>
+          ))
+        }
       </div>
     </div>
   </section>
 
-  <section class="section white"><div class="wrap"><div class="section-head"><div><span class="kicker">The essentials</span><h2>More control. Less command line.</h2></div><p>Keep common backup and restore tasks in one clear desktop workflow, with restic doing the work underneath.</p></div><div class="feature-grid">{features.map((feature) => <article class="feature"><div class="feature-icon">{feature.icon}</div><h3>{feature.title}</h3><p>{feature.text}</p></article>)}</div></div></section>
+  <section class="section white">
+    <div class="wrap">
+      <SectionHeading
+        eyebrow="The essentials"
+        title="More control. Less command line."
+        description="Keep common backup and restore tasks in one clear desktop workflow, with restic doing the work underneath."
+      />
+      <div class="feature-grid">
+        {
+          features.map((feature) => (
+            <article class="feature">
+              <div class="feature-icon" aria-hidden="true">
+                {feature.icon}
+              </div>
+              <h3>{feature.title}</h3>
+              <p>{feature.text}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
 
-  <section class="section" id="how-it-works"><div class="wrap"><div class="section-head"><div><span class="kicker">A straightforward workflow</span><h2>From setup to restore.</h2></div><p>YuzuBack brings the steps into one place, so you can focus on protecting the files that matter.</p></div><div class="steps"><article class="step"><b>01 / CONFIGURE</b><h3>Create a profile</h3><p>Choose what to back up and configure the repository and options for that job.</p></article><article class="step"><b>02 / RUN</b><h3>Make and review backups</h3><p>Start a backup and keep an eye on the profile's snapshot history.</p></article><article class="step"><b>03 / RESTORE</b><h3>Bring files back</h3><p>Select a snapshot, choose a restore destination, and follow the guided process.</p></article></div></div></section>
+  <section class="section" id="how-it-works">
+    <div class="wrap">
+      <SectionHeading
+        eyebrow="A straightforward workflow"
+        title="From setup to restore."
+        description={`${SITE.name} brings the steps into one place, so you can focus on protecting the files that matter.`}
+      />
+      <div class="steps">
+        {
+          steps.map((step) => (
+            <article class="step">
+              <b>
+                {step.number} / {step.label.toUpperCase()}
+              </b>
+              <h3>{step.title}</h3>
+              <p>{step.text}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
 
-  <section class="section white"><div class="wrap"><div class="callout"><div><span class="kicker">Free desktop software</span><h2>Give your backups a<br />clearer home.</h2><p>Download YuzuBack for Windows or Linux. Donations are always optional.</p></div><a class="button lime" href={`${base}downloads/`}>Explore downloads ↗</a></div></div></section>
+  <section class="section white">
+    <div class="wrap">
+      <div class="callout">
+        <div>
+          <span class="kicker">Free desktop software</span>
+          <h2>Give your backups a<br />clearer home.</h2>
+          <p>
+            Download {SITE.name} for Windows or Linux. Donations are always optional.
+          </p>
+        </div>
+        <a class="button lime" href={`${base}downloads/`}>
+          Explore downloads ↗
+        </a>
+      </div>
+    </div>
+  </section>
 </SiteLayout>

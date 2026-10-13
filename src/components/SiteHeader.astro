@@ -1,24 +1,51 @@
 ---
-interface Props { active?: string }
-const { active = '' } = Astro.props;
+import { navigation, SITE, type NavigationKey } from "../config/site";
+
+interface Props {
+  active?: NavigationKey;
+}
+
+const { active = "" } = Astro.props;
 const base = import.meta.env.BASE_URL;
-const links = [
-  { label: 'Overview', href: base, key: 'overview' },
-  { label: 'Downloads', href: `${base}downloads/`, key: 'downloads' },
-  { label: 'Changelog', href: `${base}changelog/`, key: 'changelog' },
-  { label: 'Contact', href: `${base}contact/`, key: 'contact' },
-];
+const links = navigation.map((link) => ({
+  ...link,
+  href: `${base}${link.path}`,
+}));
 ---
+
 <header class="wrap nav">
-  <a class="brand" href={base} aria-label="YuzuBack home"><span class="brand-mark">Y</span>YuzuBack</a>
+  <a class="brand" href={base} aria-label={`${SITE.name} home`}>
+    <span class="brand-mark" aria-hidden="true">Y</span>
+    {SITE.name}
+  </a>
   <nav class="nav-links" aria-label="Main navigation">
-    {links.map((link) => <a class:list={[active === link.key && 'active']} aria-current={active === link.key ? 'page' : undefined} href={link.href}>{link.label}</a>)}
+    {
+      links.map((link) => (
+        <a
+          class:list={[active === link.key && "active"]}
+          aria-current={active === link.key ? "page" : undefined}
+          href={link.href}
+        >
+          {link.label}
+        </a>
+      ))
+    }
     <a class="nav-cta" href={`${base}donate/`}>Support the project ↗</a>
   </nav>
   <details class="mobile-menu">
     <summary aria-label="Open navigation">Menu</summary>
     <nav class="mobile-menu-list" aria-label="Mobile navigation">
-      {links.map((link) => <a class:list={[active === link.key && 'active']} aria-current={active === link.key ? 'page' : undefined} href={link.href}>{link.label}</a>)}
+      {
+        links.map((link) => (
+          <a
+            class:list={[active === link.key && "active"]}
+            aria-current={active === link.key ? "page" : undefined}
+            href={link.href}
+          >
+            {link.label}
+          </a>
+        ))
+      }
       <a href={`${base}donate/`}>Donate</a>
     </nav>
   </details>

@@ -1,6 +1,6 @@
 # YuzuBack website (Astro)
 
-An Astro static site for YuzuBack, formerly Easy Backup Manager. The project keeps the landing page, downloads, changelog, contact, and donation pages together with reusable header/footer components and the supplied app screenshots.
+An Astro static site for YuzuBack. The project keeps the landing page, downloads, changelog, contact, and donation pages together with reusable components and the supplied app screenshots.
 
 ## Run locally
 
@@ -13,7 +13,7 @@ npm run dev
 
 The development server listens on both IPv4 and IPv6 so
 `http://localhost:4321/` works regardless of which loopback address your
-browser uses.
+browser uses. It stays attached to the terminal; press `Ctrl+C` to stop it.
 
 Create a production build with `npm run build`. The generated static website is in `dist/` and can be uploaded to any static web host.
 
@@ -35,6 +35,7 @@ GitHub Pages is free for public repositories. A custom domain is separate and mu
 
 - `src/pages/` contains the five pages.
 - `src/components/` contains the shared header and footer.
+- `src/config/site.ts` contains shared product identity and navigation data.
 - `src/layouts/SiteLayout.astro` provides the shared page shell and metadata.
 - `src/styles/global.css` contains the site styles.
 - `public/images/` contains the screenshots used by the landing page.
