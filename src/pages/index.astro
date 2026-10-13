@@ -7,35 +7,35 @@ const features = [
   { icon: '↶', title: 'Restore with a plan', text: 'Use a guided restore flow to choose the snapshot and destination before bringing files back.' },
   { icon: '⌘', title: 'Use restic, visually', text: 'Manage core restic backup and repository tasks through a desktop interface built for everyday use.' },
   { icon: '⚙', title: 'Make it fit your routine', text: 'Configure retention and optional pre-backup or post-backup scripts for your workflow.' },
-  { icon: '⇄', title: 'Windows and Linux', text: 'Use the same app across the two desktop platforms supported by Backupist.' },
+  { icon: '⇄', title: 'Windows and Linux', text: 'Use the same app across the two desktop platforms supported by YuzuBack.' },
 ];
 ---
-<SiteLayout title="Backupist — Backups without busywork" description="Backupist is a free desktop backup manager for Windows and Linux, formerly Easy Backup Manager." active="overview">
+<SiteLayout title="YuzuBack — Backups without busywork" description="YuzuBack is a free desktop backup manager for Windows and Linux, formerly Easy Backup Manager." active="overview">
   <section class="wrap hero">
     <div class="hero-copy">
       <span class="eyebrow">A calmer way to manage backups</span>
       <h1>Backups, without the <em>busywork.</em></h1>
-      <p>Backupist is a free desktop app that makes restic backups easier to create, monitor, and restore. Built for Windows and Linux. Formerly Easy Backup Manager (EBM).</p>
-      <div class="hero-actions"><a class="button lime" href={`${base}downloads/`}>Get Backupist <span aria-hidden="true">↗</span></a><a class="button line" href="#how-it-works">See how it works</a></div>
+      <p>YuzuBack is a free desktop app that makes restic backups easier to create, monitor, and restore. Built for Windows and Linux. Formerly Easy Backup Manager (EBM).</p>
+      <div class="hero-actions"><a class="button lime" href={`${base}downloads/`}>Get YuzuBack <span aria-hidden="true">↗</span></a><a class="button line" href="#how-it-works">See how it works</a></div>
       <div class="trust"><b>Free to use</b><span>·</span><b>Windows + Linux</b><span>·</span><span>Donations optional</span></div>
     </div>
-    <figure class="preview-shell real-shot"><img src={`${base}images/backupist-main-window.png`} alt="Backupist main window showing backup profiles and snapshot controls" /><figcaption class="preview-caption">Backupist running on Linux</figcaption></figure>
+    <figure class="preview-shell real-shot"><img src={`${base}images/yuzuback-main-window.png`} alt="YuzuBack main window showing backup profiles and snapshot controls" /><figcaption class="preview-caption">YuzuBack running on Linux</figcaption></figure>
   </section>
 
   <section class="section white" id="screenshots">
     <div class="wrap">
-      <div class="section-head"><div><span class="kicker">A look inside Backupist</span><h2>Real screens. Clear workflows.</h2></div><p>Explore the backup list, snapshot history, and settings in the desktop app.</p></div>
+      <div class="section-head"><div><span class="kicker">A look inside YuzuBack</span><h2>Real screens. Clear workflows.</h2></div><p>Explore the backup list, snapshot history, and settings in the desktop app.</p></div>
       <div class="screenshot-grid">
-        <figure class="screenshot-card"><img src={`${base}images/backupist-snapshots.png`} alt="Backupist snapshot list with backup and restore actions" /><figcaption><b>Browse snapshots</b><span>Review saved snapshots and open common actions from one screen.</span></figcaption></figure>
-        <figure class="screenshot-card"><img src={`${base}images/backupist-import-export.png`} alt="Backupist preferences showing import and export settings" /><figcaption><b>Import and export settings</b><span>Use the settings panel to move preferences between installations.</span></figcaption></figure>
-        <figure class="screenshot-card"><img src={`${base}images/backupist-theme-settings.png`} alt="Backupist appearance settings with dark theme selected" /><figcaption><b>Choose your appearance</b><span>Select a light or dark theme in preferences.</span></figcaption></figure>
+        <figure class="screenshot-card"><img src={`${base}images/yuzuback-snapshots.png`} alt="YuzuBack snapshot list with backup and restore actions" /><figcaption><b>Browse snapshots</b><span>Review saved snapshots and open common actions from one screen.</span></figcaption></figure>
+        <figure class="screenshot-card"><img src={`${base}images/yuzuback-import-export.png`} alt="YuzuBack preferences showing import and export settings" /><figcaption><b>Import and export settings</b><span>Use the settings panel to move preferences between installations.</span></figcaption></figure>
+        <figure class="screenshot-card"><img src={`${base}images/yuzuback-theme-settings.png`} alt="YuzuBack appearance settings with dark theme selected" /><figcaption><b>Choose your appearance</b><span>Select a light or dark theme in preferences.</span></figcaption></figure>
       </div>
     </div>
   </section>
 
   <section class="section white"><div class="wrap"><div class="section-head"><div><span class="kicker">The essentials</span><h2>More control. Less command line.</h2></div><p>Keep common backup and restore tasks in one clear desktop workflow, with restic doing the work underneath.</p></div><div class="feature-grid">{features.map((feature) => <article class="feature"><div class="feature-icon">{feature.icon}</div><h3>{feature.title}</h3><p>{feature.text}</p></article>)}</div></div></section>
 
-  <section class="section" id="how-it-works"><div class="wrap"><div class="section-head"><div><span class="kicker">A straightforward workflow</span><h2>From setup to restore.</h2></div><p>Backupist brings the steps into one place, so you can focus on protecting the files that matter.</p></div><div class="steps"><article class="step"><b>01 / CONFIGURE</b><h3>Create a profile</h3><p>Choose what to back up and configure the repository and options for that job.</p></article><article class="step"><b>02 / RUN</b><h3>Make and review backups</h3><p>Start a backup and keep an eye on the profile's snapshot history.</p></article><article class="step"><b>03 / RESTORE</b><h3>Bring files back</h3><p>Select a snapshot, choose a restore destination, and follow the guided process.</p></article></div></div></section>
+  <section class="section" id="how-it-works"><div class="wrap"><div class="section-head"><div><span class="kicker">A straightforward workflow</span><h2>From setup to restore.</h2></div><p>YuzuBack brings the steps into one place, so you can focus on protecting the files that matter.</p></div><div class="steps"><article class="step"><b>01 / CONFIGURE</b><h3>Create a profile</h3><p>Choose what to back up and configure the repository and options for that job.</p></article><article class="step"><b>02 / RUN</b><h3>Make and review backups</h3><p>Start a backup and keep an eye on the profile's snapshot history.</p></article><article class="step"><b>03 / RESTORE</b><h3>Bring files back</h3><p>Select a snapshot, choose a restore destination, and follow the guided process.</p></article></div></div></section>
 
-  <section class="section white"><div class="wrap"><div class="callout"><div><span class="kicker">Free desktop software</span><h2>Give your backups a<br />clearer home.</h2><p>Download Backupist for Windows or Linux. Donations are always optional.</p></div><a class="button lime" href={`${base}downloads/`}>Explore downloads ↗</a></div></div></section>
+  <section class="section white"><div class="wrap"><div class="callout"><div><span class="kicker">Free desktop software</span><h2>Give your backups a<br />clearer home.</h2><p>Download YuzuBack for Windows or Linux. Donations are always optional.</p></div><a class="button lime" href={`${base}downloads/`}>Explore downloads ↗</a></div></div></section>
 </SiteLayout>

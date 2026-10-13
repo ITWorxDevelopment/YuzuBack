@@ -1,6 +1,6 @@
-# Backupist website (Astro)
+# YuzuBack website (Astro)
 
-An Astro static site for Backupist, formerly Easy Backup Manager. The project keeps the landing page, downloads, changelog, contact, and donation pages together with reusable header/footer components and the supplied app screenshots.
+An Astro static site for YuzuBack, formerly Easy Backup Manager. The project keeps the landing page, downloads, changelog, contact, and donation pages together with reusable header/footer components and the supplied app screenshots.
 
 ## Run locally
 
@@ -10,6 +10,10 @@ Install Node.js 24, then run:
 npm install
 npm run dev
 ```
+
+The development server listens on both IPv4 and IPv6 so
+`http://localhost:4321/` works regardless of which loopback address your
+browser uses.
 
 Create a production build with `npm run build`. The generated static website is in `dist/` and can be uploaded to any static web host.
 
@@ -23,7 +27,7 @@ The Astro configuration reads `GITHUB_REPOSITORY` in Actions and sets the correc
 
 ### Optional custom domain
 
-For the existing `backupist.app` domain, configure it as the custom domain in **Settings → Pages**, then add the DNS records GitHub provides at your domain provider. Also create the repository Actions variable `ASTRO_CUSTOM_DOMAIN` with the value `backupist.app`; this makes Astro build links for the domain root rather than a repository subpath. You can omit this variable if you want to use the default GitHub Pages URL.
+For the existing `yuzuback.com` domain, configure it as the custom domain in **Settings → Pages**, then add the DNS records GitHub provides at your domain provider. Also create the repository Actions variable `ASTRO_CUSTOM_DOMAIN` with the value `yuzuback.com`; this makes Astro build links for the domain root rather than a repository subpath. You can omit this variable if you want to use the default GitHub Pages URL.
 
 GitHub Pages is free for public repositories. A custom domain is separate and must already be registered; domain renewal remains with its registrar.
 
